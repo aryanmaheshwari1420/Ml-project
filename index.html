@@ -29,6 +29,11 @@
           <div class="card mt-100">
             <div class="card-body">
               <h3 class="text-md-center">Enter the detail</h3><br>
+
+              {% if label %}
+              <h1>{{ label }}</h1>
+              {% endif %}
+
               <form class="form" action="/predict" method="POST">
                 <label>Enter MinTemp</label><br>
                 <input 
