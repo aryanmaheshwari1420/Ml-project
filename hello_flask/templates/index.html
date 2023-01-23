@@ -20,39 +20,39 @@
   </head>
   <body class="bg-success">
     <nav class="navbar">
-      <a class="navbar-brand text-light" style="height: 14%;">Rain Predictor</a>
+      <a class="navbar-brand text-light" style="height: 14%;">Diabetic Predictor</a>
     </nav>
     <div class="container">
       <div class="row">
         <div class="offset-4 col-md-4">
           <div class="card mt-100">
             <div class="card-body">
-              <h3 class="text-md-center">Enter the detail</h3>
+              <h3 class="text-md-center">Enter the details</h3>
               <br />
               {% if label %} {% if label==1 %}
-              <h3 style="color: green">Will happen Tomorrow</h3>
+              <h3 style="color: green">Yes, A Diabetic patient</h3>
               {% else %}
-              <h3 style="color: green">Will not happen Tomorrow</h3>
+              <h3 style="color: green">Not, A diabetic patient</h3>
               {% endif %} {% endif %}
               <form class="form" action="/predict" method="POST">
-                <label>Enter MinTemp</label><br />
+                <label>BloodPressure</label><br />
                 <input
                   type="number"
-                  name="MinTemp"
+                  name="BP"
                   step="0.01"
                   class="form-control"
                 /><br />
-                <label>Enter MaxTemp</label><br />
+                <label>BMI</label><br />
                 <input
                   type="number"
-                  name="MaxTemp"
+                  name="BMI"
                   step="0.01"
                   class="form-control"
                 /><br /><br />
-                <label>Enter the Sunshine ratio</label>
+                <label>Age</label>
                 <input
                   type="number"
-                  name="Sunshine"
+                  name="Age"
                   step="0.01"
                   class="form-control"
                 /><br /><br />

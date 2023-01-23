@@ -15,11 +15,11 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    MinTemp = request.form.get('MinTemp')
-    MaxTemp = request.form.get('MaxTemp')
-    Sunshine = request.form.get('Sunshine')
+    BP_rate = request.form.get('BP')
+    BMI_rate = request.form.get('BMI')
+    age = request.form.get('Age')
     
-    result = knn.predict([[float(MinTemp),float(MaxTemp),float(Sunshine)]])[0]
+    result = knn.predict([[float(BP_rate),float(BMI_rate),float(age)]])[0]
 
     # return "this result is {}".format(result)
     
