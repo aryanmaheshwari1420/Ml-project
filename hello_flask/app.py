@@ -1,6 +1,7 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,jsonify
 import pickle
 import pandas as pd
+import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 app = Flask(__name__)
 
@@ -18,14 +19,18 @@ def predict():
     MaxTemp = request.form.get('MaxTemp')
     Sunshine = request.form.get('Sunshine')
     
-    result = knn.predict([[MinTemp,MaxTemp,Sunshine]])[0,1]
+    result = knn.predict([[float(MinTemp),float(MaxTemp),float(Sunshine)]])[0]
+
+    # return "this result is {}".format(result)
     
     if result==1:
-        # return render_template('index.html',label=1)
-        return "yes will happen tomorrow"
+        # return jsonify({'label':1})
+        return render_template('index.html',label=1)
+        # return "yes will happen tomorrow"
     else:
-        # return render_template('index.html',label=-1)
-        return "no will not happen tomorrow"
+        # return jsonify({'label':-1})
+        return render_template('index.html',label=-1)
+        # return "no will not happen tomorrow"
 
 #     return "The Mintemp is {} , Maxtemp is{} and sunshine is{}".format(mintemp,maxtemp,sunshine)
 

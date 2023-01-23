@@ -20,42 +20,47 @@
   </head>
   <body class="bg-success">
     <nav class="navbar">
-      <a class="navbar-brand text-light">Predictor</a>
+      <a class="navbar-brand text-light" style="height: 14%;">Rain Predictor</a>
     </nav>
-
     <div class="container">
       <div class="row">
         <div class="offset-4 col-md-4">
           <div class="card mt-100">
             <div class="card-body">
-              <h3 class="text-md-center">Enter the detail</h3><br>
-<!-- 
-              {% if label %}
-              <h1>{{ label }}</h1>
-              {% endif %} -->
+              <h3 class="text-md-center">Enter the detail</h3>
+              <br />
+              {% if label %} {% if label==1 %}
+              <h3 style="color: green">Will happen Tomorrow</h3>
+              {% else %}
+              <h3 style="color: green">Will not happen Tomorrow</h3>
+              {% endif %} {% endif %}
               <form class="form" action="/predict" method="POST">
-                <label>Enter MinTemp</label><br>
-                <input 
-                type = "number" 
-                name = "MinTemp" 
-                step = 0.01
-                class = "form-control"><br>
-                <label>Enter MaxTemp</label><br>
+                <label>Enter MinTemp</label><br />
                 <input
-                  type= "number"
-                  name= "MaxTemp"
-                  step= 0.01
-                  class= "form-control"><br><br>
+                  type="number"
+                  name="MinTemp"
+                  step="0.01"
+                  class="form-control"
+                /><br />
+                <label>Enter MaxTemp</label><br />
+                <input
+                  type="number"
+                  name="MaxTemp"
+                  step="0.01"
+                  class="form-control"
+                /><br /><br />
                 <label>Enter the Sunshine ratio</label>
                 <input
-                 type="number" 
-                 name="Sunshine" 
-                 step=0.01
-                 class="form-control"><br><br>
+                  type="number"
+                  name="Sunshine"
+                  step="0.01"
+                  class="form-control"
+                /><br /><br />
                 <input
-                  type ="Submit"
+                  type="Submit"
                   value="Predict"
-                  class="btn btn-block btn-success btn-lg text-light">
+                  class="btn btn-block btn-success btn-lg text-light"
+                />
               </form>
             </div>
           </div>
