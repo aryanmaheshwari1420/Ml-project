@@ -1,5 +1,5 @@
-pip install flask
-pip install sklearn
-pip install pandas 
-pip install numpy
-python app.py
+pip3 install flask
+pip3 install sklearn
+pip3 install pandas 
+pip3 install numpy
+python3 app.py
