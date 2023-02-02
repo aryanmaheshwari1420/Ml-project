@@ -35,4 +35,4 @@ def predict():
 #     return "The Mintemp is {} , Maxtemp is{} and sunshine is{}".format(mintemp,maxtemp,sunshine)
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False, port=80)
