@@ -6,4 +6,6 @@ python3 -m pip install flask
 python3 -m pip install scikit-learn
 python3 -m pip install pandas 
 python3 -m pip install numpy
-python3 app.py
+export FLASK_APP=app.py
+export FLASK_ENV=development
+python3 -m flask run
